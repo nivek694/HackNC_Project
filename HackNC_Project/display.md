@@ -2,11 +2,11 @@
 
 User interface Displays:
 
-* Patient name - patientName
-* medicine name - medName
+* Patient name - patient_name
+* medicine name - med_name
 * medicine dosage - medAmount
-* time to take - dispenseTime
-* late indicator - medLate
+* time to take - dispense_time
+* late indicator - med_late
 * medicine dispenser - md1 - md9
 * 
 
