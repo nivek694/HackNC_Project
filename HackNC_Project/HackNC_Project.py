@@ -61,7 +61,11 @@ def main():
 
     patient_list = tk.Text(root, height=20, width=70)
     patient_list.pack()
-    patient_list.insert(tk.END, df.head(20))
+    txt = ""
+    for index, row in df.iterrows():
+        txt += "%s\t%s\t%s\t\t%i\t%s\n"%(row.loc["MRN"],row.loc["patient_name"],\
+                                         row.loc["med_name"],row.loc["med_amount"],row.loc["dispense_time"])
+    patient_list.insert(tk.END, txt)
 
     def button_clicked(num : int, md = md):
         if not md[num].is_open():
