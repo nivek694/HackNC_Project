@@ -28,7 +28,7 @@ SIZE = 9 #Determines the number of patiants
 def main():
     md = [Container() for i in range(SIZE)]
 
-    df = pd.read_csv("HackNC_Project/Patient-Data.csv")
+    df = pd.read_csv("./Patient-Data.csv")
     #print(df.head(20))
 
     d = {}
