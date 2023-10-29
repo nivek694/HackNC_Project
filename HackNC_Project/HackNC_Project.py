@@ -118,7 +118,7 @@ def main():
     '''
     buttons = [None] * size
     def create_button(num):
-        buttons[num] = tk.Button(root, text = "Patient %i"%num, command = lambda: button_clicked(num, md))
+        buttons[num] = tk.Button(root, text = "MRN: %i"%df.loc[num, "MRN"], command = lambda: button_clicked(num, md))
         buttons[num].pack()
     
     for i in range(size):
