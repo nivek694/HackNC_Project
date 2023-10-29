@@ -23,21 +23,13 @@ import tkinter as tk
 from container import Container
 import pandas as pd
 from datetime import datetime
-
+SIZE = 9 #Determines the number of patiants
 
 def main():
-    md1 = Container()
-    md2 = Container()
-    md3 = Container()
-    md4 = Container()
-    md5 = Container()
-    md6 = Container()
-    md7 = Container()
-    md8 = Container()
-    md9 = Container()
+    md = [Container() for i in range(SIZE)]
 
     df = pd.read_csv("HackNC_Project/Patient-Data.csv")
-    print(df.head(20))
+    #print(df.head(20))
 
     d = {}
 
@@ -45,7 +37,7 @@ def main():
     for x in range(len(array)):
         current_time = array[x][3]
         datetime_object = datetime.strptime(current_time, '%m/%d/%y %H:%M:%S')
-        d["md{0}".format(x)] = Container(array[x][1], datetime_object)
+        d[md[x]] = Container(array[x][1], datetime_object)
 
     #patient_list.delete("1.0", tk.END)
     #patient_list.insert(tk.END, array[0][0] + "\t")
@@ -68,16 +60,15 @@ def main():
     patient_list.pack()
     patient_list.insert(tk.END, df.head(20))
 
-    def button1_clicked():
-        if not md1.is_open():
-            md1.open_container()
-            button1.configure(bg="green")
+    def button_clicked(num : int, md = md):
+        if not md[num].is_open():
+            md[num].open_container()
+            buttons[num].configure(bg="green")
         else:
-            md1.close_container()
-            button1.configure(bg="#f0f0f0")
-        print(md1.open)
-
-
+            md[num].close_container()
+            buttons[num].configure(bg="#f0f0f0")
+        print(md[num].open)
+    '''
     def button2_clicked():
         md2.open_container()
         button2.configure(bg="green")
@@ -117,7 +108,15 @@ def main():
         md9.open_container()
         button9.configure(bg="green")
         print(md9.open)
-
+    '''
+    buttons = [None] * SIZE
+    def create_button(num):
+        buttons[num] = tk.Button(root, text = "Patient %i"%num, command = lambda: button_clicked(num, md))
+        buttons[num].pack()
+    
+    for i in range(SIZE):
+        create_button(i)
+    '''
     button1 = tk.Button(root, text='Patient 1', command=button1_clicked)
     button1.pack()
     button2 = tk.Button(root, text='Patient 2', command=button2_clicked)
@@ -136,7 +135,7 @@ def main():
     button8.pack()
     button9 = tk.Button(root, text='Patient 9', command=button9_clicked)
     button9.pack()
-
+    '''
 
 
     #end of code
