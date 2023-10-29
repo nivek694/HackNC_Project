@@ -144,6 +144,12 @@ def main():
     button9.pack()
     '''
 
+    #Make boxes red when late
+    def test_open(cont,index):
+        if not cont.open:
+            buttons[index].configure(bg = "red")
+    for index, brow in df.iterrows():
+        root.after(int(md[index].time_until_due().total_seconds()*1000), lambda : test_open(md[index],index))
 
     #end of code
     root.mainloop()
