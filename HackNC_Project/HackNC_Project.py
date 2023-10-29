@@ -31,7 +31,7 @@ def main():
     
     size = len(df)
     
-    md = [Container() for i in range(size)]
+    md = [Container(med_name = [df.loc[i, "med_name"]], open_by=datetime.strptime(df.loc[i, "dispense_time"], '%m/%d/%y %H:%M:%S')) for i in range(size)]
     #print(df.head(20))
 
     d = {}
@@ -149,6 +149,8 @@ def main():
         if not cont.open:
             buttons[index].configure(bg = "red")
     for index, brow in df.iterrows():
+        if md[index].med_late():
+            buttons[index].config(bg = "red")
         root.after(int(md[index].time_until_due().total_seconds()*1000), lambda : test_open(md[index],index))
 
     #end of code
