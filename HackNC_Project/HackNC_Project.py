@@ -23,12 +23,15 @@ import tkinter as tk
 from container import Container
 import pandas as pd
 from datetime import datetime
-SIZE = 9 #Determines the number of patiants
 
 def main():
-    md = [Container() for i in range(SIZE)]
+    
 
     df = pd.read_csv("./Patient-Data.csv")
+    
+    size = len(df)
+    
+    md = [Container() for i in range(size)]
     #print(df.head(20))
 
     d = {}
@@ -67,7 +70,7 @@ def main():
         else:
             md[num].close_container()
             buttons[num].configure(bg="#f0f0f0")
-        print(md[num].open)
+        
     '''
     def button2_clicked():
         md2.open_container()
@@ -109,12 +112,12 @@ def main():
         button9.configure(bg="green")
         print(md9.open)
     '''
-    buttons = [None] * SIZE
+    buttons = [None] * size
     def create_button(num):
         buttons[num] = tk.Button(root, text = "Patient %i"%num, command = lambda: button_clicked(num, md))
         buttons[num].pack()
     
-    for i in range(SIZE):
+    for i in range(size):
         create_button(i)
     '''
     button1 = tk.Button(root, text='Patient 1', command=button1_clicked)
