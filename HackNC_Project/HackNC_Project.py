@@ -38,7 +38,7 @@ def main():
 
     array = df.to_numpy()
     for x in range(len(array)):
-        current_time = array[x][3]
+        current_time = array[x][4]
         datetime_object = datetime.strptime(current_time, '%m/%d/%y %H:%M:%S')
         d[md[x]] = Container(array[x][1], datetime_object)
 

@@ -42,3 +42,6 @@ class Container:
       return tmp
     else:
       return "Door is closed. Operation failed."
+  
+  def time_until_due(self):
+    return datetime.datetime.now() - self.open_by
