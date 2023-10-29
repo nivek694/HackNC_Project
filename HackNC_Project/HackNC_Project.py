@@ -2,6 +2,19 @@
 HackNC 2023 project
 Team Members: Thomas Kung, Kevin Hayes, and Steven von Dohlen
 
+Basic Operation:
+This code can operate a medicine dispensing station that may be a fixed device or a rolling cart.
+The hospital pharmacy will fill the containers with the right medicine for the right patient for the time frame being covered (day/shift/etc.)
+This station will be initialized by loading data from a .csv file that will set the contents of each medicine container. (this would be generated
+   by the patient management system of the hospital)
+The tk.Text widget "patient_list" will display the list of patients to receive the medicine and the times that they should be dosed. (patients will be listed by dosing time)
+When the current time is equal to the dosing time, the patient will be added to the list.
+The opening of the specified container to dose the patient will be simulated by clicking on the indicated container (it will turn green to indicate that it has been emptied)
+    (In real life this would be sensed by a switch on the container door).  Patient line in list will turn green to indicate completion.
+If the patient is more than 10 minutes late for their medicine, their line of text will turn red to indicate that they are overdue.
+If more than an hour late, a message will be texted to the nurses phone (simulated by a dummy function)
+Once all medicines have been dispensed, the device is returned to the pharmacy for resetting/reloading for the next shift/day
+
 
 
 """
