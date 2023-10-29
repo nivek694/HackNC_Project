@@ -9,6 +9,7 @@ Team Members: Thomas Kung, Kevin Hayes, and Steven von Dohlen
 import tkinter as tk
 from container import Container
 import pandas as pd
+from datetime import datetime
 
 
 def main():
@@ -24,6 +25,22 @@ def main():
 
     df = pd.read_csv("HackNC_Project/Patient-Data.csv")
     print(df.head(20))
+
+    d = {}
+
+    array = df.to_numpy()
+    for x in range(len(array)):
+        current_time = array[x][3]
+        datetime_object = datetime.strptime(current_time, '%m/%d/%y %H:%M:%S')
+        d["md{0}".format(x)] = Container(array[x][1], datetime_object)
+
+    #patient_list.delete("1.0", tk.END)
+    #patient_list.insert(tk.END, array[0][0] + "\t")
+    #patient_list.insert(tk.END, array[0][1] + "\t")
+    #patient_list.insert(tk.END, str(array[0][2]) + "\t")
+    #patient_list.insert(tk.END, str(array[0][3]) + "\t")
+    #patient_list.insert(tk.END, str(d["md0"].med_late()))
+    
     # define the window
     root = tk.Tk()
  
@@ -39,9 +56,14 @@ def main():
     patient_list.insert(tk.END, df.head(20))
 
     def button1_clicked():
-        md1.open_container()
-        button1.configure(bg="green")
+        if not md1.is_open():
+            md1.open_container()
+            button1.configure(bg="green")
+        else:
+            md1.close_container()
+            button1.configure(bg="#f0f0f0")
         print(md1.open)
+
 
     def button2_clicked():
         md2.open_container()

@@ -1,10 +1,10 @@
 patient_name,med_name,med_amount,dispense_time,med_late
-John,Aspirin,300,10/29/2023 12:10:24 AM,FALSE
-Jane,Acetaminophen,500,10/29/2023 12:10:24 AM,FALSE
-Sally,Lidocaine,250,10/29/2023 12:10:24 AM,FALSE
-Thomas,Lisinopril,5,10/29/2023 12:10:24 AM,FALSE
-Joe,Atorvastatin,20,10/29/2023 12:10:24 AM,FALSE
-Anne,Metformin,500,10/29/2023 12:10:24 AM,FALSE
-Trevor,Simvastatin,30,10/29/2023 12:10:24 AM,FALSE
-Jack,Omeprazole,20,10/29/2023 12:10:24 AM,FALSE
-Jill,Amlodipine,5,10/29/2023 12:10:24 AM,FALSE
+John,Aspirin,300,10/29/23 12:10:24,FALSE
+Jane,Acetaminophen,500,10/29/23 12:10:24,FALSE
+Sally,Lidocaine,250,10/29/23 12:10:24,FALSE
+Thomas,Lisinopril,5,10/29/23 12:10:24,FALSE
+Joe,Atorvastatin,20,10/29/23 12:10:24,FALSE
+Anne,Metformin,500,10/29/23 12:10:24,FALSE
+Trevor,Simvastatin,30,10/29/23 12:10:24,FALSE
+Jack,Omeprazole,20,10/29/23 12:10:24,FALSE
+Jill,Amlodipine,5,10/29/23 12:10:24,FALSE
