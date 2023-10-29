@@ -1,0 +1,10 @@
+patient_name,med_name,med_amount,dispense_time,med_late
+John,Aspirin,300,10/29/2023 0:10,FALSE
+Jane,Acetaminophen,500,10/29/2023 0:10,FALSE
+Sally,Lidocaine,250,10/29/2023 0:10,FALSE
+Thomas,Lisinopril,5,10/29/2023 0:10,FALSE
+Joe,Atorvastatin,20,10/29/2023 0:10,FALSE
+Anne,Metformin,500,10/29/2023 0:10,FALSE
+Trevor,Simvastatin,30,10/29/2023 0:10,FALSE
+Jack,Omeprazole,20,10/29/2023 0:10,FALSE
+Jill,Amlodipine,5,10/29/2023 0:10,FALSE
